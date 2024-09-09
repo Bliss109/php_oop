@@ -1,31 +1,39 @@
-<?php
-class layouts{
-    public function heading($title){
-      echo "<h1>$title</h1>";
-    }
-}
-?>
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
     <head>
-        <meta charset="utf-8">
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
+        <link rel="stylesheet" href="../css/styles.css"/>
     </head>
+    <?php 
+//Define the layouts class with a heading
+class layout {
+    public function heading($title){
+        echo "<h1>$title</h1>";
+    }
+}
+//Footer function
+function footer(){
+    echo "<footer>Bliss creates</footer>";
+}
+?>
+
     <body>
         <?php
-        //Create an instance of the Layouts class
-        $layout= new Layouts();
-        $layout ->heading("Captain Bliss' website");
-         function footer(){
-           echo "<footer>Footer content here.</footer>";
-        }
+        $layouts = new layout();
+        $layouts ->heading("Captain Bliss' Website");
+        
         footer();
         ?>
-        <div>
-         Copyright &copy; ICS <?php print date("Y"); ?>
+
+        <!--Dynamic copyright -->
+        <div class="footer">
+            Copyright &copy; ICS <?php echo date("Y"); ?>
         </div>
+
     </body>
 </html>
+
 
 
